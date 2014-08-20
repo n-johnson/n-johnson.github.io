@@ -362,6 +362,7 @@ $(function() { /* Post DOM Load */
     }, {
         interject: function() {
             $(firstRow).addClass('blink');
+            $(firstRow).append('<span style="float:right; color: rgba(255,255,255,.5);">//BETA</span>');
         },
         content: ' ',
         target: '.header-links',
