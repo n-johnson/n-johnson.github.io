@@ -1,229 +1,135 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  
-  <title>Nathan Johnson</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nathan Johnson">
-<meta property="og:url" content="http://njohnson.me/">
-<meta property="og:site_name" content="Nathan Johnson">
-<meta property="og:description">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nathan Johnson">
-<meta name="twitter:description">
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <code class="hljs" id="me"><div class="row"><span class="hljs-keyword">var</span> nathanJohnson = {</div><div class="row">    toString: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{</div><div class="row">        <span class="hljs-keyword">return</span> <span class="hljs-string">'Software developer, cryptocurrency enthusiast, and maker of <a href="#" class="the-things" data-tooltip="things">_things_</a>'</span>;</div><div class="row">    },</div><div class="row">    is: [<span class="hljs-string">'<a data-tooltip="hacker" href="#">hacker</a>'</span>, <span class="hljs-string">'developer'</span>, <span class="hljs-string">'entrepreneur'</span>],</div><div class="row">    does: {</div><div class="row">        frequently: <span class="hljs-keyword">new</span> <a data-tooltip="github" href="#" id="github-container">Git.commit()</a>,</div><div class="row">        sometimes: <span class="hljs-keyword">new</span> <a href="#blog">Blog.newPost()</a></div><div class="row">    },</div><div class="row">    <a data-tooltip="languages" href="#">languages</a>: [<span class="hljs-string">'node.js'</span>, <span class="hljs-string">'PHP'</span>, <span class="hljs-string">'Java'</span>, <span class="hljs-string">'Go'</span>],</div><div class="row">    client_libs: [<span class="hljs-string">'Backbone'</span>, <span class="hljs-string">'React'</span>, (<span class="hljs-string">'Lo-Dash'</span> || <span class="hljs-string">'underscore'</span>), <span class="hljs-string">'D3.js'</span>, <span class="hljs-string">'angular'</span>, <span class="hljs-string">'jQuery'</span>],</div><div class="row">    databases: [<span class="hljs-string">'redis'</span>, <span class="hljs-string">'mongoDB'</span>, <span class="hljs-string">'MySQL'</span>, <span class="hljs-string">'PostgreSQL'</span>],</div><div class="row">    tools: [<span class="hljs-string">'Grunt'</span>, <span class="hljs-string">'Browserify'</span>, <span class="hljs-string">'Bower'</span>],</div><div class="row">    <a data-tooltip="server" href="#">server</a>: {</div><div class="row">        http: [<span class="hljs-string">'nginx'</span>, <span class="hljs-string">'Apache'</span>],</div><div class="row">        load_balancing: [<span class="hljs-string">'nginx'</span>, <span class="hljs-string">'HAProxy'</span>, <span class="hljs-string">'AWS ELB'</span>],</div><div class="row">        <a data-tooltip="platforms" href="#">platforms</a>: [<span class="hljs-string">'AWS'</span>, <span class="hljs-string">'DO'</span>, <span class="hljs-string">'Heroku'</span>, <span class="hljs-string">'dedicated'</span>],</div><div class="row">        os: [<span class="hljs-string">'Ubuntu'</span>, <span class="hljs-string">'CentOS'</span>],</div><div class="row">        other: [<span class="hljs-string">'Vagrant'</span>]</div><div class="row">    },</div><div class="row">    <a data-tooltip="inProgress" href="#">inProgress</a>: {</div><div class="row">        projects: [<span class="hljs-string">'Blockchain parsing + analysis'</span>, <span class="hljs-string">'Chrome extension - Control pagination'</span>, <span class="hljs-string">'Chromecast things'</span>],</div><div class="row">        technologes: [<span class="hljs-string">'golang'</span>, <span class="hljs-string">'data visualization'</span>, <span class="hljs-string">'docker'</span>, <span class="hljs-string">'puppet et al.'</span>],</div><div class="row">        books: [<span class="hljs-string">'<a href="http://www.amazon.com/Hackers-Painters-Big-Ideas-Computer/dp/1449389554">Hackers and Painters - Paul Graham</a>'</span>, <span class="hljs-string">'<a href="http://en.wikipedia.org/wiki/The_Brothers_Karamazov">The Brothers Karamazov - Dostoevsky</a>'</span>]</div><div class="row">    },</div><div class="row">    education: {</div><div class="row">        <span class="hljs-string">'college'</span>: {</div><div class="row">            <span class="hljs-string">'school'</span>: <span class="hljs-string">'Saint Louis Univeristy'</span>,</div><div class="row">            <span class="hljs-string">'major'</span>: <span class="hljs-string">'<a data-tooltip="Biology" href="#">Biology</a>'</span>,</div><div class="row">            <span class="hljs-string">'graduated'</span>: <span class="hljs-number">2014</span></div><div class="row">        }</div><div class="row">    },</div><div class="row">    methodology: <span class="hljs-string">'I build <a data-tooltip="why" href="#">the why</a> and figure out the details later'</span></div><div class="row">};</div></code>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+        <script>function getTooltip(key) {
+    var Position = {
+        pointUp: {
+            viewport: $(window),
+            my: 'bottom center',
+            at: 'top center',
+            adjust: {
+                method: 'flip'
+            }
+        },
+        center: {
+            viewport: $(window),
+            my: 'top center',
+            at: 'bottom center',
+            adjust: {
+                method: 'flip'
+            }
+        },
+        key: {
+            viewport: $(window),
+            my: 'top left',
+            at: 'bottom left',
+            adjust: {
+                method: 'flip'
+            }
+        }
+    };
 
-  
-    <link rel="alternative" href="/atom.xml" title="Nathan Johnson" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+    var TooltipData = {
+        'hacker': {
+            content: 'Some descriptor here...',
+            position: Position.key
+        },
+        'languages': {
+            content: ["I've worked with BASIC, PHP, and a whole host of things in between.",
+                "Presently node.js is my languages of choice, usually with a combination of both a SQL and nosql database.",
+                "I just started experimenting with go and absolultely love it."
+            ].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.key
+        },
+        'server': {
+            content: ["Beyond writing code I have a fair amount of experience managing and configuring a variety of server technlogies.",
+                "Somewhere beyond just playing around but not quite enough to work in sysops."
+            ].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.key
+        },
+        'Biology': {
+            content: ["There's a long story in this one involving an idealistic 17 year old, _Something_funny_, and the state of healthcare in America.",
+                "tl;dr: Being a doctor became much less appealing after witnessing what it actually is like. Unfortunatley I realized this too late to graudate with a different degree in 4 years."
+            ].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.pointUp
+        },
+        'inProgress': {
+            content: ["Things I'm working on now. (Maybe I'll keep this list up to date or maybe I wont...)",
+                "Clicking Git.commit() will show you the exactly what I'm working on at this moment though!"
+            ].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.key
+        },
+        'things': {
+            content: ["Of all kinds. If it can be reduced down to ones and zeros it probably fits in my defintion of _things_"].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.key
+        },
+        'platforms': {
+            content: ["At the moment most of my _things_ are hosted at digital ocean - for their current scope neither a true cloud provider or bare metal make sense."].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.key
+        },
+        'why': {
+            content: ["Simon Sinek articulates this better than anyone. If you've not seen his <a href=\"http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action\" target=\"_blank\">TED Talk</a> I highly reccomend you watch it."].map(function(el) {
+                return '<p class="tooltip-p">' + el + '</p>';
+            }).join(''),
+            position: Position.pointUp,
+            hide: { //Let's user move mouse onto tooltip (ie. to click a link) without the tooltip disappearing on them
+                fixed: true,
+                delay: 500
+            }
+        },
+        'github': {
+            content: {
+                title: function(event, api) {
+                    GitHub.Commits.latest('n-johnson', function(resp) {
+                        var date = Time.pTime(resp.date);
+                        var out = '<p> ' + date + ' | <a target="_blank" href="' + resp.commit_url + '">' + resp.commit.sha.slice(0, 7) + '</a></p>';
+                        var table = '<div class="name-table"><span class="name-cell"><a target="_blank" href="' + resp.main_url + '">' + resp.name + '</a></span></div>';
+                        api.set({
+                            'content.title': '<i class="fa fa-github f-left"></i>' + table,
+                            'content.text': '' + resp.commit.message + '<br />' + out
+                        });
+                        api.reposition();
+                    });
+                    api.set('content.text', 'Loading...');
+                    return '...';
+                },
+                text: '...'
+            },
+            show: 'click',
+            hide: 'unfocus',
+            position: Position.center
+        }
+    };
 
-  
-</head>
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Nathan Johnson</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://njohnson.me"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-test-post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/16/test-post/" class="article-date">
-  <time datetime="2014-08-17T03:46:56.000Z" itemprop="datePublished">Aug 16 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/16/test-post/">test post</a>
-    </h1>
-  
+    //Append to all - won't work if want to use different clases per tooltip
+    TooltipData[key].style = {
+        classes: 'github'
+    };
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://njohnson.me/2014/08/16/test-post/" data-id="kk88wftkhkatn4mu" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/08/16/hello-world/" class="article-date">
-  <time datetime="2014-08-17T03:45:05.000Z" itemprop="datePublished">Aug 16 2014</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/08/16/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://njohnson.me/2014/08/16/hello-world/" data-id="n9uwv7zla0n1hy2y" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
-</section>
-        
-          <aside id="sidebar">
-  
-    
-  
-    
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/08">August 2014</a><span class="archive-list-count">2</span></li></ul>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recents</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2014/08/16/test-post/">test post</a>
-          </li>
-        
-          <li>
-            <a href="/2014/08/16/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2014 Nathan Johnson<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
-
-
-
-<script src="/js/script.js" type="text/javascript"></script>
-
-  </div>
-</body>
+    return TooltipData[key] || {
+        content: 'undef',
+        style: 'github'
+    };
+}</script>
+        <script src="/js/app.js"></script>
+    </body>
 </html>
