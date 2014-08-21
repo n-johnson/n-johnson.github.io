@@ -233,11 +233,11 @@ var typeLine = function(row, finalCallback, optPercentComplete) {
         //delay: 30% of max delay = minimum. 70% will be modulated as a percent of rows complete
         delay = (0.3 * baseLetterDelay) + ((0.7 * baseLetterDelay) * (1 - optPercentComplete)),
         text = $(row).text();
-    
+
     window.NOW = false;
-    if(window.NOW) { //Remove before production
+    if (window.NOW) { //Remove before production
         delay = 0;
-    }        
+    }
 
     $(row).after('<span id="typing"></span>');
     var ele = $('#typing');
@@ -299,12 +299,25 @@ var typeAllLines = function(ele, removeFirst, cb) {
 };
 
 $(function() { /* Post DOM Load */
+    //Allow links with 'external' class to still work
+    $('.hljs').on("click", "a:not(.external)", function(e) {
+        e.preventDefault();
+    });
 
     $('[data-tooltip]').each(function() {
         $(this).qtip(getTooltip($(this).attr('data-tooltip')));
     });
 
-    //Intro animation
+    //Start rendering the page!
+    headerAnimation(function() {
+        var allRows = $('.row');
+        typeAllLines(allRows, true, function() { //true->remove first line b/c header
+            $('.row').last().addClass('typing blink');
+        });
+    });
+});
+
+function headerAnimation(cb) {
     var firstRow = $('code').children().first();
     $(firstRow).addClass('typing');
     $(firstRow).addClass('blink');
@@ -316,7 +329,7 @@ $(function() { /* Post DOM Load */
         target: comment,
         delay: 2100
     }, {
-        interject: function() {
+        interject: function() { //Don't want cursor blinking while it types
             $(firstRow).removeClass('blink');
         },
         content: ' ',
@@ -332,7 +345,7 @@ $(function() { /* Post DOM Load */
         target: comment,
         delay: 300
     }, {
-        content: '<a href="https://twitter.com/nm_johnson" class="twitter-link" target="_blank">&#61593;</a>',
+        content: '<a href="https://twitter.com/nm_johnson" class="external twitter-link" target="_blank">&#61593;</a>',
         target: '.header-links',
         delay: 100
     }, {
@@ -344,7 +357,7 @@ $(function() { /* Post DOM Load */
         target: '.header-links',
         delay: 300
     }, {
-        content: '<a href="https://github.com/n-johnson" class="github-link" target="_blank">&#61595;</a>',
+        content: '<a href="https://github.com/n-johnson" class="external github-link" target="_blank">&#61595;</a>',
         target: '.header-links',
         delay: 100
     }, {
@@ -356,7 +369,7 @@ $(function() { /* Post DOM Load */
         target: '.header-links',
         delay: 300
     }, {
-        content: '<a href="http://www.linkedin.com/in/njohnson4/" class="linkedin-link" target="_blank">&#61580;</a>',
+        content: '<a href="http://www.linkedin.com/in/njohnson4/" class="external linkedin-link" target="_blank">&#61580;</a>',
         target: '.header-links',
         delay: 100
     }, {
@@ -369,13 +382,9 @@ $(function() { /* Post DOM Load */
         delay: 1800
     }];
 
-    appendWait(x, function() { //Header Complete
+    return appendWait(x, function() {
         $(firstRow).removeClass('typing');
-        var allRows = $('.row');
-        typeAllLines(allRows, true, function() { //true->remove first line b/c header
-            $('.row').last().addClass('typing blink');
-        });
+        return cb();
     });
-
-});
+}
 },{"./GitHub":5,"./Time":6}]},{},[7]);

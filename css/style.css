@@ -549,6 +549,9 @@ body {
   overflow: hidden;
   background: #23241f; }
 
+/**
+ * Header -- First Row
+ */
 code > div:first-child {
   background: #333;
   margin: -.5em;
@@ -587,6 +590,9 @@ code > div:first-child {
   -webkit-animation-name: flash;
   animation-name: flash; }
 
+/**
+ * Main body
+ */
 code {
   font-family: "courier" monospace;
   line-height: 1.5em;
