@@ -1,6 +1,4 @@
-njohnson.me
-===========
+njohnson.me: Source
+###################
 
-This is the compiled version of my personal website, [njohnson.me](http://njohnson.me)
-
-The source files are in the `source` branch.
+WIP
