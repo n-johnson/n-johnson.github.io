@@ -4,6 +4,7 @@
  * Author: Nathan Johnson
  * Copyright 2014 All rights reserved.
  */
+@import url(http://fonts.googleapis.com/css?family=Cousine);
 @-webkit-keyframes flash {
   0%, 50%, 100% {
     opacity: 1; }
@@ -537,7 +538,8 @@ x:-o-prefocus, .qtip .qtip-tip {
   opacity: .5; }
 
 html {
-  font-size: 17px; }
+  font-size: 17px;
+  font-family: "Courier", monospace; }
 
 @media (max-width: 900px) {
   html {
@@ -547,7 +549,8 @@ html {
     font-size: 13px; } }
 body {
   overflow: hidden;
-  background: #23241f; }
+  background: #23241f;
+  font-family: "Courier", monospace; }
 
 /**
  * Header -- First Row
@@ -594,7 +597,6 @@ code > div:first-child {
  * Main body
  */
 code {
-  font-family: "courier" monospace;
   line-height: 1.5em;
   white-space: pre-wrap; }
   code a {
